@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <u:Insert xmlns:u="urn:av-openhome-org:service:Playlist:1">
+      <AfterId>0</AfterId>
+      <Uri>http://inforadio.de/livemp3</Uri>
+      <Metadata>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dlna-org:metadata-1-0/&quot;&gt;&lt;item id=&quot;163334&quot; parentID=&quot;163332&quot; restricted=&quot;1&quot;&gt;&lt;dc:title&gt;Inforadio&lt;/dc:title&gt;&lt;upnp:class&gt;object.item&lt;/upnp:class&gt;&lt;res protocolInfo=&quot;http-get:*:audio/mpeg:DLNA.ORG_PN=MP3;DLNA.ORG_OP=01;DLNA.ORG_CI=0&quot;&gt;http://inforadio.de/livemp3&lt;/res&gt;&lt;/item&gt;&lt;/DIDL-Lite&gt;</Metadata> 
+    </u:Insert>
+  </s:Body>
+</s:Envelope>
+
