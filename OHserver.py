@@ -223,8 +223,11 @@ def device_handler(config, devices, descriptions, available_devices, units_used)
 						logging.info('Device ' + device + ' now offline. Deleting from list of available devices.')
 						if device in units_used.keys():
 							for unit in units_used[device]:
-								logging.info('Delete subscription for ' + device + ' and event url ' + unit[1] + '.')
-								del unit[1:]
+								try:
+									logging.info('Delete subscription for ' + device + ' and event url ' + unit[1] + '.')
+									del unit[1:]
+								except:
+									logging.warning('Subscription for ' + device + ' was already deleted.')
 						del descriptions[device]
 		logging.info('Service loop done. Available devices: ' + str(available_devices) + '.')
 		if config['message'] == 'device': config['message'] = ''
