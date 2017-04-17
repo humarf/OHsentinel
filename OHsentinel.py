@@ -83,6 +83,9 @@ def init():
 	else: config['xmltagdelimiter'] = ';;'
 	if conf.has_option('misc', 'standardtags'):
 		config['standardtags'] = conf.get('misc', 'standardtags')
+	if conf.has_section('OHsender'):
+		for item in conf.items('OHsender'):
+			devices['sender', item[0]] = item[1]
 	if conf.has_section('OHproduct'):
 		for item in conf.items('OHproduct'):
 			devices['product', item[0]] = item[1]

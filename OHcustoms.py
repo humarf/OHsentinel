@@ -119,7 +119,7 @@ def prepare_arguments(args, unit, extend, uuid = None):
 #custom command
 #
 def command(args, devices, config, description = None):
-	if args.command[0] in ['Current', 'Fakeradio', 'NextRadiostation', 'Radiostation', 'SetSender', \
+	if args.command[0] in ['Fakeradio', 'NextRadiostation', 'Radiostation', 'SetSender', \
 		'SourceText', 'Status', 'ToggleMute', 'TogglePlay', 'TrackParse']:
 		"Process custom commands"
 		logging.debug('Running custom command ' + args.command[0])
