@@ -1,0 +1,15 @@
+[Unit]
+Description=OHsentinel command CP for openhome
+After=network.target
+
+[Service]
+User=mpd
+Group=audio
+Type=simple
+# Note: if start fails check with "systemctl status OHsentinel"
+ExecStart=/usr/bin/OHsentinel.py --log=systemd server                                                                                                                                             
+Restart=always                                                                                                                                                                                
+RestartSec=1min                                                                                                                                                                               
+                                                                                                                                                                                              
+[Install]                                                                                                                                                                                     
+WantedBy=multi-user.target

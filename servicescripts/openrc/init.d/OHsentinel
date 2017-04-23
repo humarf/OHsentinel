@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+#:deploy:OHsentinel:/etc/init.d
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+
+DESC="OHsentinel command CP for openhome"
+NAME=OHsentinel
+DAEMON=/usr/local/bin/$NAME.py
+PIDFILE=/var/run/$NAME.pid
+LOGFILE=/var/log/$NAME.log
+SCRIPTNAME=/etc/init.d/$NAME
+
+
+extra_started_commands="reload"
+
+_create_file_structure() {
+        touch $PIDFILE $LOGFILE
+        chown root:$GROUP $PIDFILE $LOGFILE
+        chmod 660 $PIDFILE $LOGFILE
+}
+
+depend() {
+        need modules
+        after net
+}
+
+start() {
+        _create_file_structure
+
+        ebegin "Starting OHsentinel"
+        start-stop-daemon --start -u ${USER} -g ${GROUP} --quiet --make-pidfile --pidfile $PIDFILE --background --exec ${DAEMON} -- ${OHSENTINEL_OPTS}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping OHsentinel"
+        start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE
+        eend $?
+}
+

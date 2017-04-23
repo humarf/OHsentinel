@@ -1,0 +1,7 @@
+# /etc/conf.d/OHsentinel: config file for /etc/init.d/OHsentinel
+#:deploy:OHsentinel:/etc/conf.d
+
+OHSENTINEL_OPTS="--log=syslog server"
+
+USER=mpd
+GROUP=audio
