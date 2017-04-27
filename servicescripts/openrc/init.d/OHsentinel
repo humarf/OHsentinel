@@ -8,7 +8,6 @@ DESC="OHsentinel command CP for openhome"
 NAME=OHsentinel
 DAEMON=/usr/local/bin/$NAME.py
 PIDFILE=/var/run/$NAME.pid
-LOGFILE=/var/log/$NAME.log
 SCRIPTNAME=/etc/init.d/$NAME
 
 
